@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Hello Terrain </title>
+<meta charset="utf-8">
+</head>
+
+
+<script id="shader-vs" type="x-shader/x-vertex">
+   attribute vec3 aVertexNormal;
+   attribute vec3 aVertexPosition;
+   attribute vec3 aColor;
+
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+    uniform vec3 uLightPosition;
+
+    varying vec3 varyingNormal;
+    varying vec3 varyingViewVector;
+    varying vec3 varyingToLightVector;
+
+    varying vec3 matColor;
+
+    void main(void) {
+
+     // Get the vertex position in eye coordinates
+     vec4 vertexPositionEye4 = uMVMatrix * vec4(aVertexPosition, 1.0);
+     vec3 vertexPositionEye3 = vertexPositionEye4.xyz / vertexPositionEye4.w;
+
+     // Calculate the vector (l) to the light source
+     varyingToLightVector = normalize(uLightPosition - vertexPositionEye3);
+
+     // Transform the normal (n) to eye coordinates
+     varyingNormal = normalize(uNMatrix * aVertexNormal);
+
+     varyingViewVector = -normalize(vertexPositionEye3);
+
+     matColor = aColor;
+     gl_Position = uPMatrix*uMVMatrix*vec4(aVertexPosition, 1.0);
+
+    }
+</script>
+
+<script id="shader-fs" type="x-shader/x-fragment">
+precision mediump float;
+
+uniform vec3 uAmbientLightColor;
+uniform vec3 uDiffuseLightColor;
+uniform vec3 uSpecularLightColor;
+
+const float shininess = 32.0;
+
+varying vec3 varyingNormal;
+varying vec3 varyingViewVector;
+varying vec3 varyingToLightVector;
+
+varying vec3 matColor;
+
+void main(void) {
+
+    vec3 vNormal = normalize(varyingNormal);
+    vec3 viewVector = normalize(varyingViewVector);
+    vec3 toLightVector = normalize(varyingToLightVector);
+
+    float diffuseLightWeight = max(dot(vNormal, toLightVector), 0.0);
+
+    vec3 reflectionVector = normalize(reflect(-toLightVector, vNormal));
+
+    float specularLightWeight = pow(max(dot(reflectionVector, viewVector), 0.0), shininess);
+
+    gl_FragColor = vec4(matColor + uDiffuseLightColor * diffuseLightWeight + uSpecularLightColor * specularLightWeight, 1.0);
+ }
+</script>
+
+<script src="javascript/gl-matrix.js"></script>
+<script src="javascript/webgl-utils.js"></script>
+<script src="javascript/MakeTerrain.js"></script>
+<script src="javascript/HelloTerrain.js"></script>
+<body onload="startup();">
+ <canvas id="myGLCanvas" width="500" height="500"></canvas>
+    <p><b>Welcome to my flight simulator!</b></p>
+    <p>
+        Use the Left/Right arrow keys to control its roll. Use the Up/Down arrow keys to control its pitch.
+    </p>
+    <p><em>Don't crash!</em></p>
+</body>
+
+</html>
