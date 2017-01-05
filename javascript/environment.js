@@ -284,17 +284,17 @@ function setupBuffers()
   ];
 
   neg_x_img.onload = function() {handleTextureLoaded(neg_x_img, skybox_texture, gl.TEXTURE_CUBE_MAP_NEGATIVE_X);}
-  neg_x_img.src = "canary/neg-x.png";
+  neg_x_img.src = "javascript/canary/neg-x.png";
   neg_y_img.onload = function() {handleTextureLoaded(neg_y_img, skybox_texture, gl.TEXTURE_CUBE_MAP_NEGATIVE_Y);}
-  neg_y_img.src = "canary/neg-y.png";
+  neg_y_img.src = "javascript/canary/neg-y.png";
   neg_z_img.onload = function() {handleTextureLoaded(neg_z_img, skybox_texture, gl.TEXTURE_CUBE_MAP_NEGATIVE_Z);}
-  neg_z_img.src = "canary/neg-z.png";
+  neg_z_img.src = "javascript/canary/neg-z.png";
   pos_x_img.onload = function() {handleTextureLoaded(pos_x_img, skybox_texture, gl.TEXTURE_CUBE_MAP_POSITIVE_X);}
-  pos_x_img.src = "canary/pos-x.png";
+  pos_x_img.src = "javascript/canary/pos-x.png";
   pos_y_img.onload = function() {handleTextureLoaded(pos_y_img, skybox_texture, gl.TEXTURE_CUBE_MAP_POSITIVE_Y);}
-  pos_y_img.src = "canary/pos-y.png";
+  pos_y_img.src = "javascript/canary/pos-y.png";
   pos_z_img.onload = function() {handleTextureLoaded(pos_z_img, skybox_texture, gl.TEXTURE_CUBE_MAP_POSITIVE_Z);}
-  pos_z_img.src = "canary/pos-z.png";
+  pos_z_img.src = "javascript/canary/pos-z.png";
 
   cube_vertex_buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, cube_vertex_buffer);
@@ -312,7 +312,7 @@ function setupBuffers()
   gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
   gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
 
-  readTextFile("teapot_0.obj", parse_obj);
+  readTextFile("javascript/teapot_0.obj", parse_obj);
 }
 
 /**
