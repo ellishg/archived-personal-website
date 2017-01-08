@@ -21,11 +21,11 @@
 
 			<!-- Header -->
 			<header id="header" class="alt">
-				<span class="logo"><img src="images/logo.svg" alt="" /></span>
+				<span class="logo"><img src="images/Virus.png" width="128px"></span>
 				<h1>Ellis Sparky Hoag</h1>
 				<p>
 					<a href="mailto:eshoag2@illinois.edu">eshoag2@illinois.edu</a>
-					<a href="https://github.com/sparkasaurusRex" style="border-bottom:none"><img src=images/GitHub-Mark-32px.png width="18px" height="18px"></a>
+					<a href="https://github.com/sparkasaurusRex" style="border-bottom:none"><img src=images/GitHub-Mark-32px.png width="18px"></a>
 				</p>
 			</header>
 
@@ -69,17 +69,17 @@
 					</header>
 					<span class="image"><video width="256" height="256" loop autoplay="autoplay" src="images/fluid.mov"></video></span>
 					<p>
-						<img src="images/opencl.png" width="10%" height="10%">
-						<img src="images/opengl.png" width="10%" height="10%">
-						<img src="images/SDL_logo.png" width="10%" height="10%">
+						<img src="images/opengl.png" height="64px">
+						<img src="images/opencl.png" height="64px">
+						<img src="images/SDL_logo.png" height="64px">
 					</p>
-					<p>
+					<p align="left">
 						In computer graphics, fluid is used to describe systems like water, smoke, and dust.
 						It is notoriously hard to simulate in real-time, so particle systems are usually used
 						to approximate them. However, non-particle based fluid simulations can make fluid
 						effects more realistic. I have decided to create a real-time fluid simulation
 						using fast algorithms based on the
-						<a href="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations">Navier-Stokes equations</a>
+						<a href="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations" target="blank">Navier-Stokes equations</a>
 						that run on the GPU using OpenCL. From this project I have learned a lot about fluid dynamics,
 						how to make a fast implimentation of vector field something something, the architecture of the GPU,
 						how to manage memory efficiently with OpenCL, and interoperability between OpenGL and OpenCL.
@@ -99,7 +99,26 @@
 					<header class="major">
 						<h2>Voronoi Diagram</h2>
           </header>
-					<p>More words go here.</p>
+					<span class="image"><img width="256" height="256" src="images/voronoi.jpeg"></img></span>
+					<p>
+						<img src="images/opengl.png" height="64px">
+						<img src="images/SDL_logo.png" height="64px">
+					</p>
+					<p align="left">
+						For a given set of points, a
+						<a href="https://en.wikipedia.org/wiki/Voronoi_diagram" target="blank">Voronoi diagram</a>
+						is usually defined to be a partion of the plane such that each region
+						is closest to its corresponding point. Its dual, the
+						<a href="https://en.wikipedia.org/wiki/Delaunay_triangulation" target="blank">Delaunay triangulation</a>,
+						asserts that there are no points inside the circumcircle of any triangle.
+						Both of these are very useful for nearest neighbor queries and generating
+						nice triangulations. There is no reason they must be restriced to the plane
+						and so my program makes Voronoi diragrams from a set of point on the unit sphere.
+						Since speed was a major goal, I used a modified version of
+						<a href="https://en.wikipedia.org/wiki/Fortune's_algorithm" target="blank">Fortune's algorithm</a>.
+						I have learned about the annoyances of floating-point error and optimizing my code
+						through multithreading.
+					</p>
 					<footer class="major">
 						<ul class="actions">
 							<li><a href="https://github.com/sparkasaurusRex/Voronoi" class="button">Learn More</a></li>
@@ -112,6 +131,11 @@
 					<header class="major">
 						<h2>Rubik's Cube Solver</h2>
 					</header>
+					<span class="image"><img width="256" height="256" src="images/cube.jpeg"></img></span>
+					<p>
+						<img src="images/opengl.png" height="64px">
+						<img src="images/SDL_logo.png" height="64px">
+					</p>
           <p>Again. Words.</p>
 					<footer class="major">
 						<ul class="actions">
