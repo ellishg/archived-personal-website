@@ -80,7 +80,7 @@
 						effects more realistic and visually interesting. I have decided to create a real-time fluid simulation
 						using fast algorithms based on the
 						<a href="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations" target="blank">Navier-Stokes equations</a>
-						that can run on the GPU using
+						accelerated by the GPU with
 						<a href="https://en.wikipedia.org/wiki/OpenCL" target="blank">OpenCL</a>
 						. From this project I have learned about fluid dynamics, the architecture of the GPU,
 						how to manage memory efficiently with OpenCL, and the interoperability between OpenGL and OpenCL.
@@ -106,18 +106,19 @@
 						<img src="images/SDL_logo.png" height="64px">
 					</p>
 					<p align="left">
-						For a given set of points, called sites, the
+						For a given set of points, called sites, a
 						<a href="https://en.wikipedia.org/wiki/Voronoi_diagram" target="blank">Voronoi diagram</a>
-						is usually defined to be a partition of the plane such that all points in each region
-						are closest to their corresponding site. Its dual, the
+						is usually defined to be a partition of the plane such that the set of all points within each region
+						are closer to their corresponding site than any other. Its dual, the
 						<a href="https://en.wikipedia.org/wiki/Delaunay_triangulation" target="blank">Delaunay triangulation</a>,
-						asserts that there are no points inside the circumcircle of any triangle.
+						asserts that there are no sites inside the circumcircle of any triangle.
 						Both of these are very useful for nearest neighbor queries and generating
 						nice triangulations. There is no reason they must be restriced to the plane
-						and so my program makes Voronoi diragrams from a set of point on the unit sphere.
+						and so my program makes Voronoi diagrams from a set of sites on the unit sphere.
 						Since speed was a major goal, I used a modified version of
-						<a href="https://en.wikipedia.org/wiki/Fortune's_algorithm" target="blank">Fortune's algorithm</a>.
-						I have learned about the annoyances of floating-point error and optimizing my code
+						<a href="https://en.wikipedia.org/wiki/Fortune's_algorithm" target="blank">Fortune's algorithm</a>
+						to generate a Voronoi diagram from thousands of sites in a fraction of a second.
+						I have learned about the annoyances of floating-point error and have optimized my code
 						through multithreading.
 					</p>
 					<footer class="major">
@@ -138,10 +139,9 @@
 						<img src="images/SDL_logo.png" height="64px">
 					</p>
           <p align="left">
-						The Rubik's cube has always fascinated me. Optimal solutions
+						The Rubik's cube has always fascinated me. Finding optimal solutions
 						<a href="http://www.cube20.org/" target="blank">(20 moves or fewer)</a>
-						can take lots of time and large amounts
-						of memory for computers to find. Most algorithms find suboptimal
+						can consume a lot of time and memory. Most algorithms find suboptimal
 						solution very quickly using about 30-40 moves. My program uses
 						<a href="http://www.jaapsch.net/puzzles/thistle.htm" target="blank">Thistlethwaite's algorithm</a>
 					 	to solve any cube using	about 35 moves in about 15 milliseconds with
