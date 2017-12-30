@@ -30,6 +30,7 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#mf_hybrid">MF-Hybrid</a></li>
 					<li><a href="#fluid_simulation">Fluid Simulation</a></li>
 					<li><a href="#voronoi">Voronoi Diagram</a></li>
 					<li><a href="#rubiks">Rubik's Cube Solver</a></li>
@@ -59,6 +60,38 @@
 					</div>
 				</section>
 
+				<!-- MF-Hybrid -->
+				<section id="mf_hybrid" class="main special">
+					<header class="major">
+						<h2>MF-Hybrid</h2>
+					</header>
+					<span class="image"><img width="256" height="256" src="images/Rosenbrock.png"></img></span>
+					<span class="image"><img width="256" height="256" src="images/LowFidelityRosenbrock.png"></img></span>
+					<p align="left">
+						<a href="https://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf" target="_blank">Bayesian Optimization</a>
+						and <a href="http://proceedings.mlr.press/v33/wang14d.pdf" target="_blank">Search-based Optimization</a>
+						are two broad families of algorithms that try to find the global
+						optima of a function with the goal of minimizing the number of
+						function evaluations without requiring its derivative. A large body
+						of existing work deals with the single-fidelity setting, where
+						function evaluations are exact but may be expensive.
+						<a href="http://papers.nips.cc/paper/6118-gaussian-process-bandit-optimisation-with-multi-fidelity-evaluations.pdf" target="_blank">Multi-fidelity</a>
+						evalution takes advantage of the fact that we may have access to
+						low-fidelity functions that approximate our objective function and
+						are much cheaper to evalute. Multi-fidelity Hybrid (MF-Hybrid)
+						combines the best attributes of both families of algorithms and
+						outperfomrs existing single-fidelity and multi-fidelity optimization
+						algorithms. Black-box global optimization has applications in
+						Neural Networks, Physics, Engineering, and much more.
+					</p>
+					<footer class="major">
+						<ul class="actions">
+							<li><a href="MF-Hybrid.pdf" class="button" target="_blank">White Paper</a></li>
+							<li><a href="https://github.com/sparkasaurusRex/MF_BaMLOGO" class="button" target="_blank">Code</a></li>
+						</ul>
+					</footer>
+				</section>
+
 				<!-- Fluid Simulation -->
 				<section id="fluid_simulation" class="main special">
 					<header class="major">
@@ -81,9 +114,6 @@
 						<a href="https://en.wikipedia.org/wiki/OpenCL" target="_blank">OpenCL</a>.
 					  From this project I have learned about fluid dynamics, the architecture of the GPU,
 						how to manage memory efficiently with OpenCL, and the interoperability between OpenGL and OpenCL.
-					</p>
-					<p>
-
 					</p>
 					<footer class="major">
 						<ul class="actions">
