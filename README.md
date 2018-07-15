@@ -1,4 +1,3 @@
-# sparkasaurusrex.github.io
-# ellishoag.me
-# ell.is/hoag
-# hoag.ell.is
+sparkasaurusrex.github.io
+ell.is/hoag
+hoag.ell.is
