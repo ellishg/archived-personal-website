@@ -1,5 +1,1 @@
-ellishg.github.io
-
-ell.is/hoag
-
-hoag.ell.is
+[ellishg.github.io/archived-personal-website](https://ellishg.github.io/archived-personal-website/)
